@@ -1,5 +1,5 @@
 import { Player } from 'src/player/entities/player.entity';
-import { Column, Entity, ManyToOne, PrimaryColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm';
 
 @Entity('games')
 export class Game {
@@ -30,6 +30,7 @@ export class Game {
   @Column()
   tournament: string;
 
-  @ManyToOne(() => Player, (player) => player.player_id)
+  @ManyToOne(() => Player, (player) => player.games)
+  @JoinColumn({ name: 'player_id' })
   player: Player;
 }

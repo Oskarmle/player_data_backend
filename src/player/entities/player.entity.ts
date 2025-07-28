@@ -15,6 +15,12 @@ export class Player {
   @Column()
   lastName: string;
 
+  @Column()
+  team: string;
+
+  @Column()
+  season: string;
+
   @OneToMany(() => Game, (game) => game.player)
-  games: Game[];
+  games: Game[] | null;
 }
