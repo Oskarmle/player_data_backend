@@ -21,4 +21,11 @@ export class GameService {
       relations: ['player'],
     });
   }
+
+  findByPlayerId(player_id: string) {
+    return this.gameRepository.find({
+      where: { player: { player_id: player_id } },
+      relations: ['player'],
+    });
+  }
 }
