@@ -7,19 +7,19 @@ export class Player {
   player_id: string;
 
   @Column()
+  rank: number;
+
+  @Column()
+  name: string;
+
+  @Column()
   player_link: string;
 
   @Column()
-  firstName: string;
+  player_club: string;
 
   @Column()
-  lastName: string;
-
-  @Column()
-  team: string;
-
-  @Column()
-  season: string;
+  current_points: number;
 
   @OneToMany(() => Game, (game) => game.player)
   games: Game[] | null;

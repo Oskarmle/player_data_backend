@@ -1,4 +1,7 @@
 import os
+import sys
+import io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 import time
 import uuid
 import psycopg2
@@ -17,33 +20,13 @@ DB_URL = os.getenv("DATABASE_URL")
 conn = psycopg2.connect(DB_URL)
 cursor = conn.cursor()
 
-players = [
-    {"id": "250679‑PEES", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#305214,59,7467481,42024"},
-    {"id": "150599‑BIHE", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#343985,59,7467244,42024"},
-    {"id": "301251‑CANI", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#316342,59,7482751,42024"},
-    {"id": "161182‑DAST", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#142898,59,7452335,42024"},
-    {"id": "230465‑FLBA", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#328783,59,7465770,42024"},
-    {"id": "100880‑SEPA", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#343754,59,7478937,42024"},
-    {"id": "141173‑HEWE", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#141533,59,7449840,42024"},
-    {"id": "090359‑JOJE", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#340787,59,7478179,42024"},
-    {"id": "221074‑JERA", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#342680,59,7466419,42024"},
-    {"id": "080172‑JOKJ", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#137062,59,7446704,42024"},
-    {"id": "170266‑KASK", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#343104,59,7477982,42024"},
-    {"id": "310153‑MOBE", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#151637,59,7470091,42024"},
-    {"id": "241075‑MORA", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#319070,59,7457754,42024"},
-    {"id": "290402‑NIKI", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#317843,59,7481672,42024"},
-    {"id": "030788‑NIZI", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#346720,59,7478163,42024"},
-    {"id": "240498‑OSER", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#319068,59,7457598,42024"},
-    {"id": "050178‑SUMU", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#329787,59,7478266,42024"},
-    {"id": "220560‑STNØ", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#326538,59,7470020,42024"},
-    {"id": "041158‑TODA", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#326539,59,7459788,42024"},
-    {"id": "81265‑THJØ", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#352646,59,7488554,42024"},
-    {"id": "200555‑TOLA", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#145074,59,7452597,42024"},
-    {"id": "050185‑NIWI", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#132936,59,7459242,42024"},
-    {"id": "190164‑HESC", "url": "https://www.bordtennisportalen.dk/DBTU/Spiller/VisSpiller/#347786,59,7484507,42024"},
+def fetch_players_from_db():
+    cursor.execute("SELECT player_id, player_link FROM players")  # change table/column names accordingly
+    rows = cursor.fetchall()
+    return [{"id": row[0], "url": row[1]} for row in rows]
 
-    # Add other players here
-]
+players = fetch_players_from_db()
+
 
 def insert_games_into_postgres(data, player_id):
     """Insert only new games if there are more new than existing."""
