@@ -7,9 +7,10 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'http://localhost:3001',
-      'https://player-data-frontend.vercel.app/',
+      'https://player-data-frontend.vercel.app',
     ],
-    credentials: true,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    // credentials: true,
   });
 
   await app.listen(process.env.PORT ?? 4000);
