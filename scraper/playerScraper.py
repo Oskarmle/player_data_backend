@@ -19,9 +19,10 @@ BASE_URL = "https://www.bordtennisportalen.dk"
 
 # ✅ Add all ranking URLs here
 RANKING_URLS = [
+    # Season 2024/2025
     # Fredensborg rating list
     "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42024,06/29/2025,0,,,4255,1,,,,,,,,0,,,,,,",
-    # Gladsaxe rating list season 2024/2025
+    # Gladsaxe rating list
     "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42024,06/29/2025,0,,,4260,1,,,,,,,,0,,,,,,",
 ]
 
