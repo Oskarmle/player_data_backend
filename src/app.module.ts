@@ -5,7 +5,7 @@ import { PlayerModule } from './player/player.module';
 import { GameModule } from './game/game.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { dbConfig } from '../data.source';
+import { dbConfig } from './data-source';
 
 @Module({
   imports: [
