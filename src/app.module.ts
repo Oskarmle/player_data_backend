@@ -6,6 +6,7 @@ import { GameModule } from './game/game.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { dbConfig } from './data-source';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { dbConfig } from './data-source';
     TypeOrmModule.forRoot(dbConfig),
     PlayerModule,
     GameModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
