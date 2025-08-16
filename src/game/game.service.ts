@@ -28,4 +28,14 @@ export class GameService {
       relations: ['player'],
     });
   }
+
+  findByPlayerAndSeason(player_id: string, season: string) {
+    const games = this.gameRepository
+      .createQueryBuilder('game')
+      .leftJoinAndSelect('game.player', 'player')
+      .where('player.player_id = :player_id', { player_id })
+      .andWhere('player.season = :season', { season })
+      .getMany();
+    return games;
+  }
 }

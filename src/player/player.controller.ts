@@ -14,4 +14,9 @@ export class PlayerController {
   findOne(@Param('player_id') player_id: string) {
     return this.playerService.findOne(player_id);
   }
+
+  @Get('season/:season')
+  findBySeason(@Param('season') season: string) {
+    return this.playerService.findBySeason(season);
+  }
 }
