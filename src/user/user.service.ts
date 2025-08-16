@@ -15,4 +15,9 @@ export class UserService {
     const user = this.userRepository.create(createUserDto);
     return this.userRepository.save(user);
   }
+
+  createBulk(createUserDtos: CreateUserDto[]) {
+    const users = this.userRepository.create(createUserDtos);
+    return this.userRepository.save(users);
+  }
 }

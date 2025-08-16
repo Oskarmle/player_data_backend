@@ -23,7 +23,7 @@ export class Player {
   current_points: number;
 
   @OneToMany(() => User, (user) => user.players)
-  user: User;
+  user?: User;
 
   @OneToMany(() => Game, (game) => game.player)
   games: Game[] | null;
