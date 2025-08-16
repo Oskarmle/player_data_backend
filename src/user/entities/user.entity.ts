@@ -1,4 +1,3 @@
-import { Optional } from '@nestjs/common';
 import { Player } from 'src/player/entities/player.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
@@ -11,6 +10,5 @@ export class User {
   name: string;
 
   @OneToMany(() => Player, (player) => player.user)
-  @Optional()
   players?: Player[];
 }

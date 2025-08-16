@@ -1,6 +1,13 @@
 import { Game } from 'src/game/entities/game.entity';
 import { User } from 'src/user/entities/user.entity';
-import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  OneToMany,
+  PrimaryColumn,
+} from 'typeorm';
 
 @Entity('players')
 export class Player {
@@ -22,8 +29,9 @@ export class Player {
   @Column()
   current_points: number;
 
-  @OneToMany(() => User, (user) => user.players)
-  user?: User;
+  @ManyToOne(() => User, (user) => user.players)
+  @JoinColumn({ name: 'user_id' })
+  user: User;
 
   @OneToMany(() => Game, (game) => game.player)
   games: Game[] | null;
