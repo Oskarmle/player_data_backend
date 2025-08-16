@@ -22,36 +22,41 @@ BASE_URL = "https://www.bordtennisportalen.dk"
 
 # Example ranking URLs
 RANKING_URLS = [
+    # 25/26
+        # Gladsaxe
+    "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42025,08/15/2025,0,,,4260,1,,,,,,,,0,,,,,,",
+        # Fredensborg
+    "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42025,08/15/2025,0,,,4255,1,,,,,,,,0,,,,,,",
     # 24/25
-        # Fredensborg
-    "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42024,06/29/2025,0,,,4255,1,,,,,,,,0,,,,,,",
         # Gladsaxe
-    "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42024,06/29/2025,0,,,4260,1,,,,,,,,0,,,,,,",
+    # "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42024,06/29/2025,0,,,4260,1,,,,,,,,0,,,,,,",
+        # Fredensborg
+    # "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42024,06/29/2025,0,,,4255,1,,,,,,,,0,,,,,,",
     # 23/24
-        # Fredensborg
-    "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42023,06/21/2024,0,,,4255,1,,,,,,,,0,,,,,,",
         # Gladsaxe
-    "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42023,06/21/2024,0,,,4260,1,,,,,,,,0,,,,,,",
+    # "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42023,06/21/2024,0,,,4260,1,,,,,,,,0,,,,,,",
+        # Fredensborg
+    # "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42023,06/21/2024,0,,,4255,1,,,,,,,,0,,,,,,",
     # 22/23
         # Gladsaxe
-    "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42022,06/23/2023,0,,,4260,1,,,,,,,,0,,,,,,",
+    # "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42022,06/23/2023,0,,,4260,1,,,,,,,,0,,,,,,",
         # Fredensborg
-    "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42022,06/23/2023,0,,,4255,1,,,,,,,,0,,,,,,",
+    # "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42022,06/23/2023,0,,,4255,1,,,,,,,,0,,,,,,",
     # 21/22
         # Gladsaxe
-    "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42021,06/24/2022,0,,,4260,1,,,,,,,,0,,,,,,",
+    # "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42021,06/24/2022,0,,,4260,1,,,,,,,,0,,,,,,",
         # Fredensborg
-    "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42021,06/24/2022,0,,,4255,1,,,,,,,,0,,,,,,",
+    # "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42021,06/24/2022,0,,,4255,1,,,,,,,,0,,,,,,",
     # 20/21
         # Gladsaxe
-    "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42020,07/01/2021,0,,,4260,1,,,,,,,,0,,,,,,",
+    # "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42020,07/01/2021,0,,,4260,1,,,,,,,,0,,,,,,",
         # Fredensborg
-    "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42020,07/01/2021,0,,,4255,1,,,,,,,,0,,,,,,",
+    # "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42020,07/01/2021,0,,,4255,1,,,,,,,,0,,,,,,",
     # 19/20
         # Gladsaxe
-    "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42019,08/13/2020,0,,,4260,1,,,,,,,,0,,,,,,",
+    # "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42019,08/13/2020,0,,,4260,1,,,,,,,,0,,,,,,",
         # Fredensborg
-    "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42019,08/13/2020,0,,,4255,1,,,,,,,,0,,,,,,",
+    # "https://www.bordtennisportalen.dk/DBTU/Ranglister/#59,42019,08/13/2020,0,,,4255,1,,,,,,,,0,,,,,,",
 ]
 
 
