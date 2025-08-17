@@ -20,4 +20,15 @@ export class UserService {
     const users = this.userRepository.create(createUserDtos);
     return this.userRepository.save(users);
   }
+
+  findOne(user_id: string) {
+    return this.userRepository.findOne({ where: { user_id: user_id } });
+  }
+
+  findUserPlayers(user_id: string) {
+    return this.userRepository.findOne({
+      where: { user_id: user_id },
+      relations: ['players'],
+    });
+  }
 }

@@ -18,7 +18,10 @@ export class PlayerService {
     return this.playerRepository.findOneBy({ player_id: player_id });
   }
 
-  findBySeason(season: string) {
-    return this.playerRepository.find({ where: { season: season } });
+  findPlayerGames(player_id: string) {
+    return this.playerRepository.find({
+      where: { player_id: player_id },
+      relations: ['games'],
+    });
   }
 }
