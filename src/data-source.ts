@@ -9,7 +9,7 @@ dotenv.config();
 
 export const dbConfig: TypeOrmModuleOptions = {
   type: 'postgres',
-  url: process.env.DATABASE_URL_DEV,
+  url: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false },
   synchronize: true, // Setting synchronize: true shouldn't be used in production - otherwise you can lose production data.
   entities: [Player, Game, User],

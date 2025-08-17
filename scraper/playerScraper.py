@@ -16,7 +16,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 # Load environment variables
 load_dotenv()
-DB_URL = os.getenv("DATABASE_URL_DEV")
+DB_URL = os.getenv("DATABASE_URL")
 
 BASE_URL = "https://www.bordtennisportalen.dk"
 

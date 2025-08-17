@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 
 # Load environment variables (NEON DB credentials)
 load_dotenv()
-DB_URL = os.getenv("DATABASE_URL_DEV")
+DB_URL = os.getenv("DATABASE_URL")
 
 # Connect to Neon PostgreSQL
 conn = psycopg2.connect(DB_URL)
