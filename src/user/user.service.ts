@@ -25,6 +25,10 @@ export class UserService {
     return this.userRepository.findOne({ where: { user_id: user_id } });
   }
 
+  findAll() {
+    return this.userRepository.find();
+  }
+
   findUserPlayers(user_id: string) {
     return this.userRepository.findOne({
       where: { user_id: user_id },

@@ -18,10 +18,9 @@ export class PlayerService {
     return this.playerRepository.findOneBy({ player_id: player_id });
   }
 
-  findPlayerGames(player_id: string) {
+  findAllUserPlayers(user_id: string) {
     return this.playerRepository.find({
-      where: { player_id: player_id },
-      relations: ['games'],
+      where: { user: { user_id: user_id } },
     });
   }
 }

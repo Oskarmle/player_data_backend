@@ -15,8 +15,8 @@ export class PlayerController {
     return this.playerService.findOne(player_id);
   }
 
-  @Get(':player_id/games')
-  findPlayerGames(@Param('player_id') player_id: string) {
-    return this.playerService.findPlayerGames(player_id);
+  @Get(':user_id/players')
+  findAllUserPlayers(@Param('user_id') user_id: string) {
+    return this.playerService.findAllUserPlayers(user_id);
   }
 }

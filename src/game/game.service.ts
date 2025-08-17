@@ -25,7 +25,18 @@ export class GameService {
   findPlayerGames(player_id: string) {
     return this.gameRepository.find({
       where: { player: { player_id: player_id } },
-      // relations: ['player'],
+    });
+  }
+
+  async findUserGames(userId: string) {
+    return this.gameRepository.find({
+      where: {
+        player: {
+          user: {
+            user_id: userId,
+          },
+        },
+      },
     });
   }
 }

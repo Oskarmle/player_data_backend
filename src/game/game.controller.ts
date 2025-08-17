@@ -19,4 +19,9 @@ export class GameController {
   findPlayerGames(@Param('player_id') player_id: string) {
     return this.gameService.findPlayerGames(player_id);
   }
+
+  @Get('/user/:user_id/games')
+  findUserGames(@Param('user_id') user_id: string) {
+    return this.gameService.findUserGames(user_id);
+  }
 }
