@@ -18,9 +18,17 @@ export class PlayerService {
     return this.playerRepository.findOneBy({ player_id: player_id });
   }
 
-  findAllUserPlayers(user_id: string) {
-    return this.playerRepository.find({
+  async findAllUserPlayers(user_id: string) {
+    const players = await this.playerRepository.find({
       where: { user: { user_id: user_id } },
     });
+
+    const sortedPlayers = players.sort((a, b) => {
+      const yearA = parseInt(a.season.split('/')[0], 10);
+      const yearB = parseInt(b.season.split('/')[0], 10);
+      return yearA - yearB;
+    });
+
+    return sortedPlayers;
   }
 }
