@@ -55,7 +55,7 @@ export class GameService {
       won,
       lost,
       totalGames: won + lost,
-      winRate: (won / (won + lost)) * 100,
+      winRate: ((won / (won + lost)) * 100).toFixed(1),
     };
   }
 
@@ -73,7 +73,7 @@ export class GameService {
       won,
       lost,
       totalGames: won + lost,
-      winRate: (won / (won + lost)) * 100,
+      winRate: ((won / (won + lost)) * 100).toFixed(1),
     };
   }
 }
