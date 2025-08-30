@@ -34,4 +34,14 @@ export class GameController {
   gamesStatsPlayer(@Param('playerId') playerId: string) {
     return this.gameService.gamesStatsPlayer(playerId);
   }
+
+  @Get('player/monthly-stats/:playerId')
+  getPlayerMonthlyStats(@Param('playerId') playerId: string) {
+    return this.gameService.playerRatingEachMonth(playerId);
+  }
+
+  @Get('user/monthly-stats/:userId')
+  getUserMonthlyStats(@Param('userId') userId: string) {
+    return this.gameService.userRatingEachMonth(userId);
+  }
 }
